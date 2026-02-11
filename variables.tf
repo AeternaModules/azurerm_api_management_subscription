@@ -20,12 +20,12 @@ EOT
     api_management_name = string
     display_name        = string
     resource_group_name = string
-    allow_tracing       = optional(bool, true)
+    allow_tracing       = optional(bool) # Default: true
     api_id              = optional(string)
     primary_key         = optional(string)
     product_id          = optional(string)
     secondary_key       = optional(string)
-    state               = optional(string, "submitted")
+    state               = optional(string) # Default: "submitted"
     subscription_id     = optional(string)
     user_id             = optional(string)
   }))

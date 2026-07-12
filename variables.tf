@@ -9,25 +9,33 @@ Optional:
     - allow_tracing
     - api_id
     - primary_key
+    - primary_key_key_vault_id (alternative to primary_key - read from Key Vault instead)
+    - primary_key_key_vault_secret_name (alternative to primary_key - read from Key Vault instead)
     - product_id
     - secondary_key
+    - secondary_key_key_vault_id (alternative to secondary_key - read from Key Vault instead)
+    - secondary_key_key_vault_secret_name (alternative to secondary_key - read from Key Vault instead)
     - state
     - subscription_id
     - user_id
 EOT
 
   type = map(object({
-    api_management_name = string
-    display_name        = string
-    resource_group_name = string
-    allow_tracing       = optional(bool) # Default: true
-    api_id              = optional(string)
-    primary_key         = optional(string)
-    product_id          = optional(string)
-    secondary_key       = optional(string)
-    state               = optional(string) # Default: "submitted"
-    subscription_id     = optional(string)
-    user_id             = optional(string)
+    api_management_name                 = string
+    display_name                        = string
+    resource_group_name                 = string
+    allow_tracing                       = optional(bool) # Default: true
+    api_id                              = optional(string)
+    primary_key                         = optional(string)
+    primary_key_key_vault_id            = optional(string)
+    primary_key_key_vault_secret_name   = optional(string)
+    product_id                          = optional(string)
+    secondary_key                       = optional(string)
+    secondary_key_key_vault_id          = optional(string)
+    secondary_key_key_vault_secret_name = optional(string)
+    state                               = optional(string) # Default: "submitted"
+    subscription_id                     = optional(string)
+    user_id                             = optional(string)
   }))
   validation {
     condition = alltrue([

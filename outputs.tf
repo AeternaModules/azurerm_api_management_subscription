@@ -1,3 +1,7 @@
+output "api_management_subscriptions_id" {
+  description = "Map of id values across all api_management_subscriptions, keyed the same as var.api_management_subscriptions"
+  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.id }
+}
 output "api_management_subscriptions_allow_tracing" {
   description = "Map of allow_tracing values across all api_management_subscriptions, keyed the same as var.api_management_subscriptions"
   value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.allow_tracing }

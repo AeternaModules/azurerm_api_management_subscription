@@ -24,7 +24,7 @@ EOT
     api_management_name                 = string
     display_name                        = string
     resource_group_name                 = string
-    allow_tracing                       = optional(bool) # Default: true
+    allow_tracing                       = optional(bool)
     api_id                              = optional(string)
     primary_key                         = optional(string)
     primary_key_key_vault_id            = optional(string)
@@ -33,18 +33,10 @@ EOT
     secondary_key                       = optional(string)
     secondary_key_key_vault_id          = optional(string)
     secondary_key_key_vault_secret_name = optional(string)
-    state                               = optional(string) # Default: "submitted"
+    state                               = optional(string)
     subscription_id                     = optional(string)
     user_id                             = optional(string)
   }))
-  validation {
-    condition = alltrue([
-      for k, v in var.api_management_subscriptions : (
-        length(v.display_name) > 0
-      )
-    ])
-    error_message = "must not be empty"
-  }
   # --- Unconfirmed validation candidates, derived from azurerm_api_management_subscription's provider source ---
   # Not auto-enabled: either a bespoke provider validator we can't safely translate,
   # or a path that crosses a list-typed block (needs its own for_each wrapping).
@@ -71,6 +63,9 @@ EOT
   #   source:    [from resourcegroups.ValidateName] !matched
   # path: api_management_name
   #   source:    [from validate.ApiManagementServiceName] !matched
+  # path: display_name
+  #   condition: length(value) > 0
+  #   message:   must not be empty
   # path: product_id
   #   source:    [from product.ValidateProductID] !ok
   # path: product_id

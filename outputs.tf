@@ -1,51 +1,51 @@
 output "api_management_subscriptions_id" {
   description = "Map of id values across all api_management_subscriptions, keyed the same as var.api_management_subscriptions"
-  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.id }
+  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.id if v.id != null && length(v.id) > 0 }
 }
 output "api_management_subscriptions_allow_tracing" {
   description = "Map of allow_tracing values across all api_management_subscriptions, keyed the same as var.api_management_subscriptions"
-  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.allow_tracing }
+  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.allow_tracing if v.allow_tracing != null }
 }
 output "api_management_subscriptions_api_id" {
   description = "Map of api_id values across all api_management_subscriptions, keyed the same as var.api_management_subscriptions"
-  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.api_id }
+  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.api_id if v.api_id != null && length(v.api_id) > 0 }
 }
 output "api_management_subscriptions_api_management_name" {
   description = "Map of api_management_name values across all api_management_subscriptions, keyed the same as var.api_management_subscriptions"
-  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.api_management_name }
+  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.api_management_name if v.api_management_name != null && length(v.api_management_name) > 0 }
 }
 output "api_management_subscriptions_display_name" {
   description = "Map of display_name values across all api_management_subscriptions, keyed the same as var.api_management_subscriptions"
-  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.display_name }
+  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.display_name if v.display_name != null && length(v.display_name) > 0 }
 }
 output "api_management_subscriptions_primary_key" {
   description = "Map of primary_key values across all api_management_subscriptions, keyed the same as var.api_management_subscriptions"
-  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.primary_key }
+  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.primary_key if v.primary_key != null && length(v.primary_key) > 0 }
   sensitive   = true
 }
 output "api_management_subscriptions_product_id" {
   description = "Map of product_id values across all api_management_subscriptions, keyed the same as var.api_management_subscriptions"
-  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.product_id }
+  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.product_id if v.product_id != null && length(v.product_id) > 0 }
 }
 output "api_management_subscriptions_resource_group_name" {
   description = "Map of resource_group_name values across all api_management_subscriptions, keyed the same as var.api_management_subscriptions"
-  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.resource_group_name }
+  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.resource_group_name if v.resource_group_name != null && length(v.resource_group_name) > 0 }
 }
 output "api_management_subscriptions_secondary_key" {
   description = "Map of secondary_key values across all api_management_subscriptions, keyed the same as var.api_management_subscriptions"
-  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.secondary_key }
+  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.secondary_key if v.secondary_key != null && length(v.secondary_key) > 0 }
   sensitive   = true
 }
 output "api_management_subscriptions_state" {
   description = "Map of state values across all api_management_subscriptions, keyed the same as var.api_management_subscriptions"
-  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.state }
+  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.state if v.state != null && length(v.state) > 0 }
 }
 output "api_management_subscriptions_subscription_id" {
   description = "Map of subscription_id values across all api_management_subscriptions, keyed the same as var.api_management_subscriptions"
-  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.subscription_id }
+  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.subscription_id if v.subscription_id != null && length(v.subscription_id) > 0 }
 }
 output "api_management_subscriptions_user_id" {
   description = "Map of user_id values across all api_management_subscriptions, keyed the same as var.api_management_subscriptions"
-  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.user_id }
+  value       = { for k, v in azurerm_api_management_subscription.api_management_subscriptions : k => v.user_id if v.user_id != null && length(v.user_id) > 0 }
 }
 
